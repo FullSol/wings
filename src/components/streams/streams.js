@@ -11,7 +11,7 @@ const Streams = () => {
     // Otherwise, use the live domain
     const parent = hostName.includes("localhost")
       ? "localhost"
-      : "https://main.d1tpxcn2dsuhgs.amplifyapp.com/";
+      : "main.d1tpxcn2dsuhgs.amplifyapp.com/";
 
     console.log(channel);
     console.log(parent);
