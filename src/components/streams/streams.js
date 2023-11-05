@@ -11,8 +11,10 @@ const Streams = () => {
     // Otherwise, use the live domain
     const parent = hostName.includes("localhost")
       ? "localhost"
-      : "yourlivedomain.com";
+      : "https://main.d1tpxcn2dsuhgs.amplifyapp.com/";
 
+    console.log(channel);
+    console.log(parent);
     // Construct the Twitch player URL with the appropriate parent parameter
     return `https://player.twitch.tv/?channel=${channel}&parent=${parent}`;
   };
