@@ -31,7 +31,7 @@ const Home = () => {
         <Grid component="section">
           <New />
         </Grid>
-        <Grid component="section">
+        {/* <Grid component="section">
           <Container maxWidth="xl">
             <SubTitle text="Current Progression" />
           </Container>
@@ -45,7 +45,7 @@ const Home = () => {
           <Container maxWidth="xl">
             <SubTitle text="Streams" />
           </Container>
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );
