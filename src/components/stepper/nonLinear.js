@@ -23,7 +23,6 @@ const NonLinearStepper = ({ handleStep, activeStep, labels }) => {
 };
 
 NonLinearStepper.propTypes = {
-  totalSteps: PropTypes.number.isRequired,
   handleStep: PropTypes.func.isRequired,
   activeStep: PropTypes.number.isRequired,
   labels: PropTypes.arrayOf(PropTypes.string).isRequired,

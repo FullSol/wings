@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, Box } from "@mui/material";
 
-const Carousel = ({ slide, animationKey, children }) => {
+const Carousel = ({
+  slide,
+  animationKey,
+  border,
+  children,
+  preloadedImages,
+}) => {
   return (
     <Container
       maxWidth="xl"
@@ -12,27 +18,47 @@ const Carousel = ({ slide, animationKey, children }) => {
         justifyContent: "center",
         height: "100vh",
         position: "relative",
+        p: border ? 2 : 0,
+        backgroundColor: border ? "transparent" : "",
       }}
     >
       <Box
-        sx={{ height: "100%", maxWidth: "100%", objectFit: "contain" }}
-        component="img"
-        animationKey={animationKey}
-        src={require(`../../../media/${slide.imgLocation}`)}
-        alignItems="center"
-      />
+        sx={{
+          width: "100%",
+          overflow: "hidden",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          component="img"
+          sx={{
+            height: "auto",
+            maxWidth: "100%",
+            maxHeight: "100vh",
+            objectFit: "contain",
+            border: border ? "1px solid rgba(255, 255, 255, 0.8)" : "none",
+            borderRadius: border ? "50px" : 0,
+          }}
+          key={animationKey}
+          src={preloadedImages[slide.imgLocation].src}
+          alt={`Slide ${slide.id}`}
+        />
+      </Box>
       {children}
     </Container>
   );
 };
 
-export default Carousel;
-
 Carousel.propTypes = {
   slide: PropTypes.shape({
     id: PropTypes.number.isRequired,
     imgLocation: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   animationKey: PropTypes.number.isRequired,
-  imgLocation: PropTypes.string.isRequired,
+  border: PropTypes.bool,
+  children: PropTypes.node,
 };
+
+export default Carousel;
