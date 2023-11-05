@@ -12,6 +12,7 @@ const SectionContainer = () => {
     activeStep: 0,
     labels: [],
     preloadedImages: {},
+    userInteracted: false,
     loading: true,
   });
 
@@ -23,6 +24,7 @@ const SectionContainer = () => {
     activeStep,
     labels,
     preloadedImages,
+    userInteracted,
   } = state;
 
   useEffect(() => {
@@ -70,13 +72,29 @@ const SectionContainer = () => {
 
   useEffect(() => {
     // Set up an interval to auto-advance the carousel every 5 seconds
-    const intervalId = setInterval(() => {
-      autoStepper();
-    }, 5000);
+    const autoAdvance = () => {
+      if (!userInteracted) autoStepper();
+    };
+
+    const intervalId = setInterval(autoAdvance, 5000);
 
     // Clean up the interval on component unmount or when activeStep changes
     return () => clearInterval(intervalId);
-  }, [activeStep]); // Depend on activeStep to reset the interval when it changes
+  }, [activeStep, userInteracted]); // Depend on activeStep to reset the interval when it changes
+
+  // Reset user interaction flag after a timeout
+  useEffect(() => {
+    if (userInteracted) {
+      const timeoutId = setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          userInteracted: false,
+        }));
+      }, 10000); // 10 seconds cooldown
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [userInteracted]);
 
   const autoStepper = () => {
     setState((prevState) => {
@@ -100,6 +118,7 @@ const SectionContainer = () => {
     setState((prevState) => ({
       ...prevState,
       activeStep: step,
+      userInteracted: true,
     }));
   };
 
