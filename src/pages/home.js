@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "@mui/material";
+// import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Header } from "../components/header";
-import { SubTitle } from "../components/headings";
+// import { SubTitle } from "../components/headings";
 import New from "../components/new/new";
 
 const Home = () => {
