@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Header } from "../components/header";
-import { SubTitle } from "../components/headings";
+// import { SubTitle } from "../components/headings";
 import New from "../components/new/new";
 import Streams from "../components/streams/streams";
+import CharacterCard from "../components/roster/characterCard/characterCard";
+import Roster from "../components/roster/roster";
 
 const Home = () => {
   const [state, setState] = useState({
@@ -37,11 +39,11 @@ const Home = () => {
             <SubTitle text="Current Progression" />
           </Container>
         </Grid> */}
-        {/* <Grid component="section">
+        <Grid component="section">
           <Container maxWidth="xl">
-            <SubTitle text="Guild Roster" />
+            <Roster />
           </Container>
-        </Grid> */}
+        </Grid>
         <Grid component="section">
           <Container maxWidth="xl">
             <Streams />

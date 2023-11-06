@@ -4,18 +4,12 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 const Streams = () => {
   const twitchEmbedUrl = (channel) => {
-    // Get the hostname of the current window
     const hostName = window.location.hostname;
 
-    // Check if the hostname includes 'localhost' for development environment
-    // Otherwise, use the live domain
     const parent = hostName.includes("localhost")
       ? "localhost"
       : "main.d1tpxcn2dsuhgs.amplifyapp.com";
 
-    console.log(channel);
-    console.log(parent);
-    // Construct the Twitch player URL with the appropriate parent parameter
     return `https://player.twitch.tv/?channel=${channel}&parent=${parent}`;
   };
 
@@ -26,9 +20,9 @@ const Streams = () => {
         xs={12}
         sx={{
           display: "flex",
-          justifyContent: "center", // Horizontal centering
-          alignItems: "center", // Vertical centering
-          height: "100%", // Set the height to occupy the full container height if needed
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
         }}
       >
         <Typography variant="h2" component="h2" sx={{ display: "none" }}>
