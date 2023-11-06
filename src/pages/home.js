@@ -9,6 +9,7 @@ import Streams from "../components/streams/streams";
 import Roster from "../components/roster/roster";
 import Progression from "../components/progression/progression";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
+import About from "../components/about/about";
 
 const Home = () => {
   const [state, setState] = useState({
@@ -33,6 +34,9 @@ const Home = () => {
     <>
       <Header title={siteTitle} links={navLinks} />
       <Grid container component="main" direction="column">
+        <Grid component="section" sx={{ mt: 15 }}>
+          <About />
+        </Grid>
         <Grid component="section">
           <New />
         </Grid>
