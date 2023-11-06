@@ -35,7 +35,13 @@ const CurrentProgression = () => {
     >
       {current.bosses?.map((boss) => {
         console.log(boss);
-        return <BossProgressionCard imgLocation={boss.imgLocation} />;
+        return (
+          <BossProgressionCard
+            name={boss.name}
+            imgLocation={boss.imgLocation}
+            progress={boss.lowest}
+          />
+        );
       })}
     </Grid>
   );
