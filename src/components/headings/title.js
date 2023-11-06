@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 
 const Title = ({ sx, text }) => {
   return (
-    <Typography sx={sx ? sx : {}} variant="h1" component="h1">
+    <Typography sx={sx ? sx : {}} variant="h4" component="h1">
       {text}
     </Typography>
   );
