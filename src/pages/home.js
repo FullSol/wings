@@ -8,6 +8,7 @@ import Streams from "../components/streams/streams";
 // import CharacterCard from "../components/roster/characterCard/characterCard";
 import Roster from "../components/roster/roster";
 import Progression from "../components/progression/progression";
+import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 
 const Home = () => {
   const [state, setState] = useState({
@@ -35,17 +36,30 @@ const Home = () => {
         <Grid component="section">
           <New />
         </Grid>
-        <Grid component="section" sx={{ backgroundImage: "url()" }}>
+        <Grid
+          component="section"
+          sx={{
+            width: "100%",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${EmeraldDream})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            p: 20,
+          }}
+        >
           <Container maxWidth="xl">
             <Progression />
           </Container>
         </Grid>
-        <Grid component="section">
+        <Grid
+          component="section"
+          sx={{ pt: 10, pb: 10, backgroundColor: "#1E1E1E" }}
+        >
           <Container maxWidth="xl">
             <Roster />
           </Container>
         </Grid>
-        <Grid component="section">
+        <Grid component="section" sx={{ mt: 2, mb: 2 }}>
           <Container maxWidth="xl">
             <Streams />
           </Container>
