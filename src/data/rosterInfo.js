@@ -2,7 +2,7 @@ export const RosterInfo = {
   characters: [
     {
       id: 1,
-      name: "Lohloch",
+      name: "Lohlock",
       rank: "Guild Master, Raider, The Boss",
       playableRace: "Troll",
       currentSpec: "Demonology",
