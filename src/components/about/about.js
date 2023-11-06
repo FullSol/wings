@@ -52,16 +52,40 @@ const About = () => {
         <Grid item>
           <ButtonGroup>
             <Tooltip title="Warcraft Logs">
-              <Button>Warcraft Logs</Button>
+              <Button
+                href="https://www.warcraftlogs.com/guild/id/707417"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Warcraft Logs
+              </Button>
             </Tooltip>
             <Tooltip title="Wow Armory">
-              <Button>Wow Armory</Button>
+              <Button
+                href="https://worldofwarcraft.blizzard.com/en-us/guild/us/area-52/wings"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wow Armory
+              </Button>
             </Tooltip>
             <Tooltip title="Wow Progress">
-              <Button>Wow Progress</Button>
+              <Button
+                href="https://www.wowprogress.com/guild/us/area-52/Wings"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wow Progress
+              </Button>
             </Tooltip>
             <Tooltip title="Raider.io">
-              <Button>Raider.io</Button>
+              <Button
+                href="https://raider.io/guilds/us/area-52/Wings"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Raider.io
+              </Button>
             </Tooltip>
           </ButtonGroup>
         </Grid>
@@ -92,7 +116,13 @@ const About = () => {
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item>
           <ButtonGroup>
-            <Button>Apply</Button>
+            <Button
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfBu7P9KPVgwy5K3nNIxhHFvJtKxNmqmiNcdknsrB8H0T8m2A/viewform"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Apply
+            </Button>
           </ButtonGroup>
         </Grid>
       </Grid>
