@@ -6,6 +6,7 @@ import { Header } from "../components/header";
 import New from "../components/new/new";
 import Streams from "../components/streams/streams";
 import CharacterCard from "../components/roster/characterCard/characterCard";
+import Roster from "../components/roster/roster";
 
 const Home = () => {
   const [state, setState] = useState({
@@ -40,38 +41,7 @@ const Home = () => {
         </Grid> */}
         <Grid component="section">
           <Container maxWidth="xl">
-            <Grid
-              container
-              direction="row"
-              spacing={2}
-              xs={12}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-              <CharacterCard />
-            </Grid>
+            <Roster />
           </Container>
         </Grid>
         <Grid component="section">
