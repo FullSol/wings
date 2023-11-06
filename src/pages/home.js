@@ -10,6 +10,13 @@ import Roster from "../components/roster/roster";
 import Progression from "../components/progression/progression";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 import About from "../components/about/about";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 const Home = () => {
   const [state, setState] = useState({
@@ -32,10 +39,12 @@ const Home = () => {
 
   return (
     <>
-      <Header title={siteTitle} links={navLinks} />
+      {/* <Header title={siteTitle} links={navLinks} /> */}
       <Grid container component="main" direction="column">
-        <Grid component="section">
-          <About />
+        <Grid component="section" sx={{ bgcolor: "#1E1E1E" }}>
+          <ThemeProvider theme={darkTheme}>
+            <About />
+          </ThemeProvider>
         </Grid>
         <Grid component="section">
           <New />
@@ -55,16 +64,16 @@ const Home = () => {
             <Progression />
           </Container>
         </Grid>
-        <Grid
+        {/* <Grid
           component="section"
           sx={{ pt: 10, pb: 10, backgroundColor: "#1E1E1E" }}
         >
           <Container maxWidth="xl">
             <Roster />
           </Container>
-        </Grid>
-        <Grid component="section" sx={{ mt: 2, mb: 2 }}>
-          <Container maxWidth="xl">
+        </Grid> */}
+        <Grid component="section" sx={{ height: "1000px" }}>
+          <Container maxWidth="xl" sx={{ mt: "300px" }}>
             <Streams />
           </Container>
         </Grid>
