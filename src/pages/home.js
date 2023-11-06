@@ -34,7 +34,7 @@ const Home = () => {
     <>
       <Header title={siteTitle} links={navLinks} />
       <Grid container component="main" direction="column">
-        <Grid component="section" sx={{ mt: 15 }}>
+        <Grid component="section">
           <About />
         </Grid>
         <Grid component="section">

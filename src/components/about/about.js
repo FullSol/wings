@@ -1,12 +1,14 @@
 import React from "react";
 import {
   Container,
+  Box,
   Typography,
   ButtonGroup,
   Button,
   Tooltip,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import Logo from "../../media/wings-logo-ai.png";
 
 const About = () => {
   const noLinkButton = {
@@ -20,21 +22,45 @@ const About = () => {
   };
 
   return (
-    <Container maxWidth="xl" sx={{ height: "100vh" }}>
-      <Typography
-        variant="h1"
-        component="h1"
-        sx={{ fontSize: { xs: "5rem", md: "6rem" } }}
-      >
-        Wings
-      </Typography>
-      <Typography
-        variant="h2"
-        component={"h2"}
-        sx={{ fontSize: { xs: "2.75rem", md: "3.75rem" } }}
-      >
-        Alliance - Area 52 US
-      </Typography>
+    <Container
+      maxWidth="xl"
+      sx={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Grid container>
+        <Grid>
+          <Box
+            component="img"
+            alt="wings"
+            src={Logo}
+            sx={{
+              width: "200px",
+              borderRadius: "50%",
+              border: "1px solid #1E1E1E",
+            }}
+          />
+        </Grid>
+        <Grid>
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{ fontSize: { xs: "5rem", md: "6rem" } }}
+          >
+            Wings
+          </Typography>
+          <Typography
+            variant="h2"
+            component={"h2"}
+            sx={{ fontSize: { xs: "2.75rem", md: "3.75rem" } }}
+          >
+            Alliance - Area 52 US
+          </Typography>
+        </Grid>
+      </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item>
           <ButtonGroup>
