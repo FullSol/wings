@@ -25,7 +25,7 @@ const CurrentProgression = () => {
     <Grid
       container
       direction="row"
-      spacing={2}
+      spacing={4}
       xs={12}
       sx={{
         display: "flex",
