@@ -8,7 +8,7 @@ const Streams = () => {
 
     const parent = hostName.includes("localhost")
       ? "localhost"
-      : "main.d1tpxcn2dsuhgs.amplifyapp.com";
+      : "www.wingsguild.com";
 
     return `https://player.twitch.tv/?channel=${channel}&parent=${parent}`;
   };
