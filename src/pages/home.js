@@ -5,7 +5,7 @@ import { Header } from "../components/header";
 // import { SubTitle } from "../components/headings";
 import New from "../components/new/new";
 import Streams from "../components/streams/streams";
-import CharacterCard from "../components/roster/characterCard/characterCard";
+// import CharacterCard from "../components/roster/characterCard/characterCard";
 import Roster from "../components/roster/roster";
 import Progression from "../components/progression/progression";
 
@@ -35,7 +35,7 @@ const Home = () => {
         <Grid component="section">
           <New />
         </Grid>
-        <Grid component="section">
+        <Grid component="section" sx={{ backgroundImage: "url()" }}>
           <Container maxWidth="xl">
             <Progression />
           </Container>
