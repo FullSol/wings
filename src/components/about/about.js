@@ -8,9 +8,15 @@ import {
   Tooltip,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { useTheme } from "@mui/material/styles";
 import Logo from "../../media/wings-logo-ai.png";
-
+import WarcraftLogs from "../../media/icons/warcraft-logs-logo.png";
+import WowArmory from "../../media/icons/warcraft-icon.png";
+import Curse from "../../media/icons/curse-icon.png";
+import RaiderIO from "../../media/icons/raiderio_logo.png";
 const About = () => {
+  const theme = useTheme();
+
   const noLinkButton = {
     textDecoration: "none",
     cursor: "default",
@@ -39,8 +45,10 @@ const About = () => {
             src={Logo}
             sx={{
               width: "200px",
+              height: "200px",
               borderRadius: "50%",
               border: "1px solid #1E1E1E",
+              backgroundColor: "#0D0906",
             }}
           />
         </Grid>
@@ -48,14 +56,26 @@ const About = () => {
           <Typography
             variant="h1"
             component="h1"
-            sx={{ fontSize: { xs: "5rem", md: "6rem" } }}
+            sx={{
+              fontSize: {
+                xs: "5rem",
+                md: "6rem",
+                color: theme.palette.text.primary,
+              },
+            }}
           >
             Wings
           </Typography>
           <Typography
             variant="h2"
             component={"h2"}
-            sx={{ fontSize: { xs: "2.75rem", md: "3.75rem" } }}
+            sx={{
+              fontSize: {
+                xs: "2.75rem",
+                md: "3.75rem",
+                color: theme.palette.text.primary,
+              },
+            }}
           >
             Alliance - Area 52 US
           </Typography>
@@ -64,11 +84,13 @@ const About = () => {
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item>
           <ButtonGroup>
-            <Button sx={noLinkButton}>Cutting Edge</Button>
+            <Button sx={noLinkButton} color="error">
+              Cutting Edge
+            </Button>
           </ButtonGroup>
         </Grid>
         <Grid item>
-          <ButtonGroup>
+          <ButtonGroup color="error">
             <Button sx={noLinkButton}>Raiding</Button>
             <Button sx={noLinkButton}>Mythic Plus</Button>
           </ButtonGroup>
@@ -76,14 +98,14 @@ const About = () => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item>
-          <ButtonGroup>
+          <ButtonGroup sx={{ backgroundColor: "#1E1E1E" }} color="error">
             <Tooltip title="Warcraft Logs">
               <Button
                 href="https://www.warcraftlogs.com/guild/id/707417"
                 target="_blank"
                 rel="noreferrer"
               >
-                Warcraft Logs
+                <Box component="img" src={WarcraftLogs} alt="Warcraft Logs" />
               </Button>
             </Tooltip>
             <Tooltip title="Wow Armory">
@@ -92,7 +114,7 @@ const About = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Wow Armory
+                <Box component="img" src={WowArmory} alt="Warcraft Armory" />
               </Button>
             </Tooltip>
             <Tooltip title="Wow Progress">
@@ -101,7 +123,7 @@ const About = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Wow Progress
+                <Box component="img" src={Curse} alt="Wow Progress" />
               </Button>
             </Tooltip>
             <Tooltip title="Raider.io">
@@ -110,7 +132,7 @@ const About = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Raider.io
+                <Box component="img" src={RaiderIO} alt="Raider.io" />
               </Button>
             </Tooltip>
           </ButtonGroup>
@@ -125,6 +147,7 @@ const About = () => {
               pr: 2,
               display: { xs: "none", md: "block" },
               maxWidth: "60%",
+              color: theme.palette.text.primary,
             }}
           >
             We are a Cutting Edge guild aiming for efficient progression through
@@ -141,7 +164,7 @@ const About = () => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item>
-          <ButtonGroup>
+          <ButtonGroup color="error">
             <Button
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBu7P9KPVgwy5K3nNIxhHFvJtKxNmqmiNcdknsrB8H0T8m2A/viewform"
               target="_blank"
