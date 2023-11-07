@@ -28,6 +28,7 @@ const Home = () => {
   const { siteTitle, navLinks } = state;
 
   useEffect(() => {
+    document.title = "Wings";
     import("../data/headerInfo").then(({ HeaderInfo: data }) => {
       setState((prevState) => ({
         ...prevState,
