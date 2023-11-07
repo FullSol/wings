@@ -21,43 +21,87 @@ const BossProgressionCard = ({
   preloadedImages,
 }) => {
   return (
-    <Grid item xs={8} md={4}>
+    <Grid item xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
         <Paper
           sx={{
-            p: 2,
-            display: "flex",
-            flexDirection: "row",
-            borderLeft: "8px solid green",
+            // borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0,
+            borderLeft: "6px solid green",
           }}
         >
-          <Box
-            component="img"
-            src={imgLocation}
-            alt={`${title}_thumb`}
+          <Grid
+            container
             sx={{
-              width: "30%",
-              borderRadius: "50%",
-              border: "1px solid white",
+              display: { xs: "flex" },
+              flexDirection: "row",
+              p: 2,
+              flexWrap: "nowrap",
             }}
-          />
-          <Grid container sx={{ ml: 2 }}>
+          >
+            <Grid item sx={{ mr: 6 }}>
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "block" },
+                  width: "150px",
+                  height: "150px",
+                  borderRadius: "50%",
+                  border: "1px solid #FFF",
+                  overflow: "hidden",
+                  "&:hover img": {
+                    transform: "scale(1.1)",
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={imgLocation}
+                  alt={`${title}_thumb`}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "50%",
+                    transition: "transform 0.3s ease-in-out",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+            </Grid>
             <Grid
               item
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
+                p: 2,
+                width: "100%",
               }}
             >
-              <Typography variant="h5">{name}</Typography>
-              <Typography>Status: Alive</Typography>
-              <LinearProgress
-                variant="determinate"
-                color="success"
-                value={100 - progress}
-                sx={{ width: "200px", height: "10px" }}
-              />
+              <Grid
+                container
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  height: "100%",
+                  flexWrap: "nowrap",
+                }}
+                spacing={2}
+              >
+                <Grid item xs={12}>
+                  <Typography variant="h5">{name}</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>Status: Alive</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography>
+                    <LinearProgress
+                      variant="determinate"
+                      color="success"
+                      value={100 - progress}
+                      sx={{ height: "15px" }}
+                    />
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Paper>

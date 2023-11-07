@@ -25,16 +25,11 @@ const CurrentProgression = () => {
     <Grid
       container
       direction="row"
-      spacing={4}
-      xs={12}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      spacing={{ xs: 2 }} // card spacing
+      sx={{ pt: { xs: 2, md: 6, lg: 16 }, pb: { xs: 2, md: 6, lg: 16 } }} // progression section
+      xs={12} // progression section width
     >
       {current.bosses?.map((boss) => {
-        console.log(boss);
         return (
           <BossProgressionCard
             name={boss.name}

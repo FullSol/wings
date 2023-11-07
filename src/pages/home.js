@@ -57,7 +57,6 @@ const Home = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
-            p: 20,
           }}
         >
           <Container maxWidth="xl">
