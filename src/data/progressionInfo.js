@@ -8,73 +8,368 @@ import Smolderon from "../media/patch_10.2_assets/raid/bosses/boss_smolderon_thu
 import Tindral from "../media/patch_10.2_assets/raid/bosses/boss_tindral_thumb.webp";
 import Fyrakk from "../media/patch_10.2_assets/raid/bosses/boss_fyrakk_thumb.webp";
 
-export const ProgressionInfo = {
-  current: {
-    raidTitle: "Amirdrasil",
+export const ProgressionInfo = [
+  {
+    name: "Vault of the Incarnates",
     bosses: [
       {
-        id: 1,
-        name: "Gnarlroot",
-        title: "Ancient of War",
-        imgLocation: GnarlRoot,
-        lowest: 100,
+        name: "Eranog",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 2,
-        name: "Igira the Cruel",
-        title: "Zaqali Elder",
-        imgLocation: Igira,
-        lowest: 100,
+        name: "Terros",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 3,
-        name: "Volcross",
-        title: null,
-        imgLocation: Volcross,
-        lowest: 100,
+        name: "The Prima Council",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 4,
-        name: "Council of Dreams",
-        title: "",
-        imgLocation: Council,
-        lowest: 100,
+        name: "Sennarth",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 5,
-        name: "Larodar, Keeper of the Flames",
-        title: "",
-        imgLocation: Lardor,
-        lowest: 100,
+        name: "Dathea, the Ascended",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 6,
-        name: "Nymue",
-        title: "Weaver of the Cycle",
-        imgLocation: Nymue,
-        lowest: 100,
+        name: "Broodkeeper Diurna",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
       {
-        id: 7,
-        name: "Smolderon",
-        title: "The Firelord",
-        imgLocation: Smolderon,
-        lowest: 100,
-      },
-      {
-        id: 8,
-        name: "Tindral Sageswift",
-        title: "Seer of the Flame",
-        imgLocation: Tindral,
-        lowest: 100,
-      },
-      {
-        id: 9,
-        name: "Fyrakk",
-        title: "The Blazing",
-        imgLocation: Fyrakk,
-        lowest: 100,
+        name: "Raszageth the Storm-Eater",
+        difficulties: {
+          normal: { level: "normal", status: "progressing", date: null },
+          heroic: { level: "heroic", status: "progressing", date: null },
+          mythic: { level: "mythic", status: "progressing", date: null },
+        },
       },
     ],
   },
-};
+  {
+    name: "Abberus, The Shadowed Crucible",
+    bosses: [
+      {
+        name: "Kazarra",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "The Amalgamation Chamber",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "The Forgotten Experiments",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "Assault of the Zaqali",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "Rashok, the Elder",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "The Vigilant Steward",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "Magmorax",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "Echo of Neltharion",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+      {
+        name: "Scalecommander Sarkareth",
+        difficulties: {
+          normal: { level: "normal", status: "killed", date: null },
+          heroic: { level: "heroic", status: "killed", date: null },
+          mythic: { level: "mythic", status: "killed", date: null },
+        },
+      },
+    ],
+  },
+  {
+    name: "Amirdrassil, the Dream's Hope",
+    bosses: [
+      {
+        name: "Gnarlroot",
+        imgLocation: GnarlRoot,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Igira the Cruel",
+        imgLocation: Igira,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Volcross",
+        imgLocation: Volcross,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Council of Dreams",
+        imgLocation: Council,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Larodar, Keeper of the Flames",
+        imgLocation: Lardor,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: { status: "progression", lowest: 100, date: null },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Nymue",
+        imgLocation: Nymue,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Smolderon",
+        imgLocation: Smolderon,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Tindral Sageswift",
+        imgLocation: Tindral,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+      {
+        name: "Fyrakk",
+        imgLocation: Fyrakk,
+        difficulties: {
+          normal: {
+            level: "normal",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          heroic: {
+            level: "heroic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          mythic: {
+            level: "mythic",
+            status: "progressing",
+            lowest: 100,
+            date: null,
+          },
+          pulls: 0,
+        },
+      },
+    ],
+  },
+];
