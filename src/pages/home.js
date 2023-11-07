@@ -28,6 +28,7 @@ const Home = () => {
   const { siteTitle, navLinks } = state;
 
   useEffect(() => {
+    document.title = "Wings";
     import("../data/headerInfo").then(({ HeaderInfo: data }) => {
       setState((prevState) => ({
         ...prevState,
@@ -57,7 +58,6 @@ const Home = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
-            p: 20,
           }}
         >
           <Container maxWidth="xl">
