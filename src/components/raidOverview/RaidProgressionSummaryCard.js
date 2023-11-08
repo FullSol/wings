@@ -3,7 +3,7 @@ import { Paper, LinearProgress, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const RaidProgressionCard = ({ name, bosses }) => {
+const RaidProgressionSummaryCard = ({ name, bosses }) => {
   const darkTheme = createTheme({
     palette: {
       mode: "dark", // Switching the theme mode to 'dark'
@@ -112,4 +112,4 @@ const RaidProgressionCard = ({ name, bosses }) => {
   );
 };
 
-export default RaidProgressionCard;
+export default RaidProgressionSummaryCard;

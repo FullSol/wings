@@ -7,7 +7,7 @@ import New from "../components/new/new";
 import Streams from "../components/streams/streams";
 // import CharacterCard from "../components/roster/characterCard/characterCard";
 import Roster from "../components/roster/roster";
-import Progression from "../components/progression/progression";
+import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 import About from "../components/about/about";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -61,7 +61,7 @@ const Home = () => {
           }}
         >
           <Container maxWidth="xl">
-            <Progression />
+            <RaidOverview />
           </Container>
         </Grid>
         {/* <Grid

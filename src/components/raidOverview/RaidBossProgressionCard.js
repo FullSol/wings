@@ -1,8 +1,9 @@
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
-import { Paper, Box, Typography, LinearProgress } from "@mui/material";
+import { Paper, Typography, LinearProgress } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import ZoomedCircleImage from "./zoomedCircleImage";
 
 const darkTheme = createTheme({
   palette: {
@@ -13,13 +14,7 @@ const darkTheme = createTheme({
   },
 });
 
-const BossProgressionCard = ({
-  name,
-  title,
-  imgLocation,
-  progress,
-  preloadedImages,
-}) => {
+const RaidBossProgressionCard = ({ name, title, imgLocation, progress }) => {
   return (
     <Grid item xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
@@ -40,32 +35,7 @@ const BossProgressionCard = ({
             }}
           >
             <Grid item sx={{ mr: 6 }}>
-              <Box
-                sx={{
-                  display: { xs: "none", sm: "block" },
-                  width: "150px",
-                  height: "150px",
-                  borderRadius: "50%",
-                  border: "1px solid #FFF",
-                  overflow: "hidden",
-                  "&:hover img": {
-                    transform: "scale(1.1)",
-                  },
-                }}
-              >
-                <Box
-                  component="img"
-                  src={imgLocation}
-                  alt={`${title}_thumb`}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "50%",
-                    transition: "transform 0.3s ease-in-out",
-                    objectFit: "cover",
-                  }}
-                />
-              </Box>
+              <ZoomedCircleImage imgLocation={imgLocation} title={title} />
             </Grid>
             <Grid
               item
@@ -110,9 +80,9 @@ const BossProgressionCard = ({
   );
 };
 
-export default BossProgressionCard;
+export default RaidBossProgressionCard;
 
-BossProgressionCard.propTypes = {
+RaidBossProgressionCard.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   imgLocation: PropTypes.string.isRequired,
