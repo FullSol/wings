@@ -82,14 +82,14 @@ const About = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid item>
+        <Grid>
           <ButtonGroup>
             <Button sx={noLinkButton} color="error">
               Cutting Edge
             </Button>
           </ButtonGroup>
         </Grid>
-        <Grid item>
+        <Grid>
           <ButtonGroup color="error">
             <Button sx={noLinkButton}>Raiding</Button>
             <Button sx={noLinkButton}>Mythic Plus</Button>
@@ -97,7 +97,7 @@ const About = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid item>
+        <Grid>
           <ButtonGroup sx={{ backgroundColor: "#1E1E1E" }} color="error">
             <Tooltip title="Warcraft Logs">
               <Button
@@ -139,7 +139,7 @@ const About = () => {
         </Grid>
       </Grid>
       <Grid container sx={{ mt: 5 }}>
-        <Grid item>
+        <Grid>
           <Typography
             variant="p"
             component="p"
@@ -163,7 +163,7 @@ const About = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid item>
+        <Grid>
           <ButtonGroup color="error">
             <Button
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBu7P9KPVgwy5K3nNIxhHFvJtKxNmqmiNcdknsrB8H0T8m2A/viewform"

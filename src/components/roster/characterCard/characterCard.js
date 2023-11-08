@@ -13,7 +13,7 @@ const CharacterCard = ({
   mythicPlusScore,
 }) => {
   return (
-    <Grid item xs={8} md={4}>
+    <Grid xs={8} md={4}>
       <Paper sx={{ p: 2 }}>
         <Typography variant="h5">{`${name}, ${playableRace} ${currentSpec} ${playableClass}`}</Typography>
         <Typography>{`Rank: ${rank}`}</Typography>

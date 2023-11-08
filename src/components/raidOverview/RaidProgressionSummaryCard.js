@@ -24,7 +24,7 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
   };
 
   return (
-    <Grid item xs={12} md={6} lg={4}>
+    <Grid xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
         <Paper>
           <Grid
@@ -52,7 +52,7 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
               }}
               spacing={2}
             >
-              <Grid item xs={12} sx={{ position: "relative" }}>
+              <Grid xs={12} sx={{ position: "relative" }}>
                 <Typography
                   sx={{
                     position: "absolute",
@@ -70,7 +70,7 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
                   sx={{ height: "25px" }}
                 />
               </Grid>
-              <Grid item xs={12} sx={{ position: "relative" }}>
+              <Grid xs={12} sx={{ position: "relative" }}>
                 <Typography
                   sx={{
                     position: "absolute",
@@ -88,7 +88,7 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
                   sx={{ height: "25px" }}
                 />
               </Grid>
-              <Grid item xs={12} sx={{ position: "relative" }}>
+              <Grid xs={12} sx={{ position: "relative" }}>
                 <Typography
                   sx={{
                     position: "absolute",

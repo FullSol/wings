@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Header } from "../components/header";
-// import { SubTitle } from "../components/headings";
 import New from "../components/new/new";
 import Streams from "../components/streams/streams";
-// import CharacterCard from "../components/roster/characterCard/characterCard";
-import Roster from "../components/roster/roster";
 import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 import About from "../components/about/about";
@@ -19,25 +15,6 @@ const darkTheme = createTheme({
 });
 
 const Home = () => {
-  const [state, setState] = useState({
-    siteTitle: "",
-    navLinks: [],
-    darkMode: "",
-  });
-
-  const { siteTitle, navLinks } = state;
-
-  useEffect(() => {
-    document.title = "Wings";
-    import("../data/headerInfo").then(({ HeaderInfo: data }) => {
-      setState((prevState) => ({
-        ...prevState,
-        siteTitle: data.siteTitle,
-        navLinks: data.navLinks,
-      }));
-    });
-  }, []);
-
   return (
     <>
       <Grid container component="main" direction="column">
