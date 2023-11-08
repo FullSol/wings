@@ -5,7 +5,7 @@ import New from "../components/new/new";
 import Streams from "../components/streams/streams";
 import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
-import About from "../components/about/about";
+import GuildInformation from "../components/guildInformation/GuildInformation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const darkTheme = createTheme({
@@ -20,7 +20,7 @@ const Home = () => {
       <Grid container component="main" direction="column">
         <Grid component="section" sx={{ bgcolor: "#1E1E1E" }}>
           <ThemeProvider theme={darkTheme}>
-            <About />
+            <GuildInformation />
           </ThemeProvider>
         </Grid>
         <Grid component="section">
