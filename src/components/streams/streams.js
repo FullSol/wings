@@ -16,7 +16,6 @@ const Streams = () => {
   return (
     <Grid container xs={12} spacing={2}>
       <Grid
-        item
         xs={12}
         sx={{
           display: "flex",
@@ -29,7 +28,7 @@ const Streams = () => {
           Wings Watch
         </Typography>
       </Grid>
-      <Grid item xs={12} lg={6} sx={{ height: "500px" }}>
+      <Grid xs={12} lg={6} sx={{ height: "500px" }}>
         <Paper sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
           <iframe
             title="cheets"
@@ -40,7 +39,7 @@ const Streams = () => {
           ></iframe>
         </Paper>
       </Grid>
-      <Grid item xs={12} lg={6} sx={{ height: "500px" }}>
+      <Grid xs={12} lg={6} sx={{ height: "500px" }}>
         <Paper sx={{ width: "100%", height: "100%", overflow: "hidden" }}>
           <iframe
             title="solsphere"

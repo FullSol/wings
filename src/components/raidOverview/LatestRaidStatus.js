@@ -4,7 +4,7 @@ import RaidBossProgressionCard from "./RaidBossProgressionCard";
 
 const LatestRaidStatus = ({ latestRaid, difficulty }) => {
   return (
-    <Grid item xs={12}>
+    <Grid xs={12}>
       <Grid
         container
         direction="row"

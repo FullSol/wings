@@ -4,7 +4,7 @@ import RaidProgressionSummaryCard from "./RaidProgressionSummaryCard";
 
 const PastRaidSummary = ({ raids }) => {
   return (
-    <Grid item xs={12}>
+    <Grid xs={12}>
       <Grid
         container
         direction="row"

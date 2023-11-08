@@ -21,6 +21,7 @@ const RaidProgressionContainer = () => {
 
   // Determine the highest difficulty progression has started on
   const getDifficulty = (raid) => {
+    console.log(raid);
     const difficultyOrder = ["mythic", "heroic", "normal"]; // Ordered highest to lowest
     let highestDifficultyKilled = difficultyOrder[difficultyOrder.length - 1]; // Start with the lowest difficulty
 
