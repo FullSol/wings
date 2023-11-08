@@ -37,7 +37,9 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
             }}
             xs={12}
           >
-            <Typography sx={{ mb: 2 }}>{name}</Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              {name}
+            </Typography>
             <Grid
               container
               sx={{
