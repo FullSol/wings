@@ -40,7 +40,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Header title={siteTitle} links={navLinks} /> */}
       <Grid container component="main" direction="column">
         <Grid component="section" sx={{ bgcolor: "#1E1E1E" }}>
           <ThemeProvider theme={darkTheme}>
@@ -64,14 +63,6 @@ const Home = () => {
             <RaidOverview />
           </Container>
         </Grid>
-        {/* <Grid
-          component="section"
-          sx={{ pt: 10, pb: 10, backgroundColor: "#1E1E1E" }}
-        >
-          <Container maxWidth="xl">
-            <Roster />
-          </Container>
-        </Grid> */}
         <Grid component="section" sx={{ height: "1000px" }}>
           <Container maxWidth="xl" sx={{ mt: "300px" }}>
             <Streams />

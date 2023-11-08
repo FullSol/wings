@@ -9,7 +9,6 @@ const RaidProgressionContainer = () => {
     // Fetch the data here and update the state
     const fetchData = async () => {
       try {
-        // Here we're directly awaiting the import promise to resolve and destructuring the default export
         const { ProgressionInfo } = await import("../../data/progressionInfo");
         setRaidData(ProgressionInfo);
       } catch (error) {
@@ -22,7 +21,6 @@ const RaidProgressionContainer = () => {
 
   // Determine the highest difficulty progression has started on
   const getDifficulty = (raid) => {
-    console.log(raid);
     const difficultyOrder = ["mythic", "heroic", "normal"]; // Ordered highest to lowest
     let highestDifficultyKilled = difficultyOrder[difficultyOrder.length - 1]; // Start with the lowest difficulty
 
