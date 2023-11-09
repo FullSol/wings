@@ -33,18 +33,25 @@ const GuildInformationLayout = ({ info }) => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildButtonGroup buttons={info.mindset.buttons} />
+          <GuildButtonGroup
+            buttons={info.mindset.buttons}
+            color={info.mindset.color}
+          />
         </Grid>
         <Grid>
           <GuildButtonGroup
             buttons={info.interests.buttons}
             tooltip={info.interests.tooltip}
+            color={info.interests.color}
           />
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildButtonGroup buttons={info.reportingSites.buttons} />
+          <GuildButtonGroup
+            buttons={info.reportingSites.buttons}
+            color={info.reportingSites.color}
+          />
         </Grid>
       </Grid>
       <Grid container sx={{ mt: 5 }}>
@@ -54,7 +61,10 @@ const GuildInformationLayout = ({ info }) => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildButtonGroup buttons={info.apply.buttons} />
+          <GuildButtonGroup
+            buttons={info.apply.buttons}
+            color={info.apply.color}
+          />
         </Grid>
       </Grid>
     </Container>
