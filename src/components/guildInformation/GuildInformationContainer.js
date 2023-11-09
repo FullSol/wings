@@ -9,7 +9,7 @@ const GuildInformationContainer = () => {
     const fetchData = async () => {
       try {
         const { GuildInfo } = await import("../../data/guildInfo");
-        console.log(GuildInfo);
+
         setGuildInfo({
           ...GuildInfo,
         });

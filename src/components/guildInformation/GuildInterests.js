@@ -3,7 +3,6 @@ import { ButtonGroup } from "@mui/material";
 import GuildInterestsButton from "./GuildInterestsButton";
 
 const GuildInterests = ({ interests }) => {
-  console.log(interests);
   return (
     <ButtonGroup>
       {typeof interests === "string" && !Array.isArray(interests) ? (
