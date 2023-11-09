@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import New from "../components/new/new";
-import Streams from "../components/streams/streams";
+import GuildStreamers from "../components/guildStreamers/StreamersContainer";
 import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 import GuildInformation from "../components/guildInformation/GuildInformation";
@@ -40,9 +40,9 @@ const Home = () => {
             <RaidOverview />
           </Container>
         </Grid>
-        <Grid component="section" sx={{ height: "1000px" }}>
-          <Container maxWidth="xl" sx={{ mt: "300px" }}>
-            <Streams />
+        <Grid component="section">
+          <Container maxWidth="xl">
+            <GuildStreamers />
           </Container>
         </Grid>
       </Grid>
