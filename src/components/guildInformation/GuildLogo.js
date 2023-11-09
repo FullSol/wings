@@ -11,11 +11,15 @@ const GuildLogo = ({ logo }) => {
         width: "200px",
         height: "200px",
         borderRadius: "50%",
-        border: "1px solid #1E1E1E",
+        borderSize: "1px",
+        borderStyle: "solid",
         backgroundColor: "#0D0906",
+        borderColor: "white ",
       }}
     />
   );
 };
 
 export default GuildLogo;
+
+GuildLogo.propTypes = {};

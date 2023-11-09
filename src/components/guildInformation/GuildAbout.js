@@ -22,3 +22,5 @@ const GuildAbout = ({ text }) => {
 };
 
 export default GuildAbout;
+
+GuildAbout.propTypes = {};

@@ -23,3 +23,5 @@ const GuildSubTitle = ({ faction, realm, region }) => {
 };
 
 export default GuildSubTitle;
+
+GuildSubTitle.propTypes = {};

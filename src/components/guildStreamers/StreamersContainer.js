@@ -25,7 +25,7 @@ const StreamersContainer = () => {
             twitchEmbedUrl: twitchEmbedUrl(streamer.channel),
           };
         });
-        console.log(processedStreamInfo);
+
         setStreamerData(processedStreamInfo);
       } catch (error) {
         console.error("Failed to fetch streamer data:", error);
@@ -34,8 +34,6 @@ const StreamersContainer = () => {
 
     fetchData();
   }, []);
-
-  console.log(streamerData);
 
   if (!streamerData) {
     return <div>Loading...</div>;
