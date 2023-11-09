@@ -2,12 +2,10 @@ import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import GuildLogo from "./GuildLogo";
-import GuildReportButtons from "./GuildReportButtons";
 import GuildNameTitle from "./GuildNameTitle";
 import GuildSubTitle from "./GuildSubTitle";
-import GuildInterests from "./GuildInterests";
+import GuildButtonGroup from "./GuildButtonGroup";
 import GuildAbout from "./GuildAbout";
-import GuildApplyButton from "./GuildApplyButton";
 
 const GuildInformationLayout = ({ info }) => {
   return (
@@ -35,15 +33,18 @@ const GuildInformationLayout = ({ info }) => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildInterests interests={info.mindset} />
+          <GuildButtonGroup buttons={info.mindset.buttons} />
         </Grid>
         <Grid>
-          <GuildInterests interests={info.interests} />
+          <GuildButtonGroup
+            buttons={info.interests.buttons}
+            tooltip={info.interests.tooltip}
+          />
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildReportButtons sites={info.reportingSites} />
+          <GuildButtonGroup buttons={info.reportingSites.buttons} />
         </Grid>
       </Grid>
       <Grid container sx={{ mt: 5 }}>
@@ -53,7 +54,7 @@ const GuildInformationLayout = ({ info }) => {
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid>
-          <GuildApplyButton application={info.apply} />
+          <GuildButtonGroup buttons={info.apply.buttons} />
         </Grid>
       </Grid>
     </Container>
