@@ -12,3 +12,5 @@ const GuildApplyButton = ({ application }) => {
 };
 
 export default GuildApplyButton;
+
+GuildApplyButton.propTypes = {};

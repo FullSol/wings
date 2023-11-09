@@ -19,3 +19,5 @@ const GuildLogo = ({ logo }) => {
 };
 
 export default GuildLogo;
+
+GuildLogo.propTypes = {};

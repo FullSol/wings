@@ -18,3 +18,5 @@ const GuildInterests = ({ interests }) => {
 };
 
 export default GuildInterests;
+
+GuildInterests.propTypes = {};

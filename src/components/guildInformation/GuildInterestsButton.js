@@ -20,3 +20,5 @@ const GuildMindsetButton = ({ text }) => {
 };
 
 export default GuildMindsetButton;
+
+GuildMindsetButton.propTypes = {};

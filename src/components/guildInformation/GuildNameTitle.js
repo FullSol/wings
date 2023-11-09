@@ -23,3 +23,5 @@ const GuildNameTitle = ({ text }) => {
 };
 
 export default GuildNameTitle;
+
+GuildNameTitle.propTypes = {};

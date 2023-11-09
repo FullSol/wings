@@ -13,3 +13,5 @@ const GuildReportButtons = ({ sites }) => {
 };
 
 export default GuildReportButtons;
+
+GuildReportButton.propTypes = {};

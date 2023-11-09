@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, Typography, ButtonGroup, Button } from "@mui/material";
+import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import GuildLogo from "./GuildLogo";
-import { useTheme } from "@mui/material/styles";
 import GuildReportButtons from "./GuildReportButtons";
 import GuildNameTitle from "./GuildNameTitle";
 import GuildSubTitle from "./GuildSubTitle";
@@ -10,9 +9,7 @@ import GuildInterests from "./GuildInterests";
 import GuildAbout from "./GuildAbout";
 import GuildApplyButton from "./GuildApplyButton";
 
-const GuildInformationWrapper = ({ info }) => {
-  const theme = useTheme();
-
+const GuildInformationLayout = ({ info }) => {
   return (
     <Container
       maxWidth="xl"
@@ -63,4 +60,6 @@ const GuildInformationWrapper = ({ info }) => {
   );
 };
 
-export default GuildInformationWrapper;
+export default GuildInformationLayout;
+
+GuildInformationLayout.propTypes = {};

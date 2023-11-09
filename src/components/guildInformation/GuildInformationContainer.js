@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import GuildInformationWrapper from "./GuildInformationWrapper";
+import GuildInformationLayout from "./GuildInformationLayout";
 
 const GuildInformationContainer = () => {
   const [guildInfo, setGuildInfo] = useState(null);
@@ -26,7 +26,7 @@ const GuildInformationContainer = () => {
     return <div>Loading...</div>;
   }
 
-  return <GuildInformationWrapper info={guildInfo} />;
+  return <GuildInformationLayout info={guildInfo} />;
 };
 
 export default GuildInformationContainer;
