@@ -11,17 +11,7 @@ const GuildInformationContainer = () => {
         const { GuildInfo } = await import("../../data/guildInfo");
         console.log(GuildInfo);
         setGuildInfo({
-          name: GuildInfo.name,
-          realm: GuildInfo.realm,
-          faction: GuildInfo.faction,
-          region: GuildInfo.region,
-          logo: GuildInfo.logo,
-          about: GuildInfo.about,
-          interests: GuildInfo.interests,
-          mindset: GuildInfo.mindset,
-          progressionLevel: GuildInfo.progressionLevel,
-          apply: GuildInfo.apply,
-          reportingSites: GuildInfo.reportingSites,
+          ...GuildInfo,
         });
       } catch (error) {
         console.error("Failed to fetch raid data:", error);
