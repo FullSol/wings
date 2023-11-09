@@ -8,6 +8,7 @@ const StreamerPanel = ({ name, twitchEmbedUrl, height }) => {
       src={twitchEmbedUrl}
       height={panelHeight}
       width="100%"
+      style={{ borderRadius: "5px" }}
       allowFullScreen
     ></iframe>
   );
