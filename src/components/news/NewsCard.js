@@ -18,7 +18,7 @@ const NewsCard = ({ card }) => {
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              R
+              WoW
             </Avatar>
           }
           title={card.title}
