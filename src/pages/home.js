@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import New from "../components/new/new";
 import GuildStreamers from "../components/guildStreamers/StreamersContainer";
 import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
 import GuildInformation from "../components/guildInformation/GuildInformation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import News from "../components/news/News";
 
 const darkTheme = createTheme({
   palette: {
@@ -24,7 +24,7 @@ const Home = () => {
           </ThemeProvider>
         </Grid>
         <Grid component="section">
-          <New />
+          <News />
         </Grid>
         <Grid
           component="section"
