@@ -1,26 +1,23 @@
-import React from "react";
-import { Paper, LinearProgress, Typography } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Grid from "@mui/material/Unstable_Grid2";
+import React from 'react';
+import { Paper, Typography } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Grid from '@mui/material/Unstable_Grid2'; // or '@mui/material/Grid' if you've updated MUI version
+import RaidProgressionSummaryBar from './RaidProgressionSummaryBar'; // import your new component
 
 const RaidProgressionSummaryCard = ({ name, bosses }) => {
   const darkTheme = createTheme({
     palette: {
-      mode: "dark", // Switching the theme mode to 'dark'
+      mode: 'dark',
       success: {
-        main: "#008001", // This is an example color. Replace with the color you want.
+        main: '#008001',
       },
     },
   });
 
   const killCount = (bosses, difficulty) => {
-    let count = 0;
-
-    bosses.forEach((boss) => {
-      if (boss.difficulties[difficulty].status === "killed") count++;
-    });
-
-    return count;
+    return bosses.filter(
+      (boss) => boss.difficulties[difficulty].status === 'killed'
+    ).length;
   };
 
   return (
@@ -30,83 +27,31 @@ const RaidProgressionSummaryCard = ({ name, bosses }) => {
           <Grid
             container
             sx={{
-              display: { xs: "flex" },
-              flexDirection: "column",
+              display: 'flex',
+              flexDirection: 'column',
               p: 2,
-              flexWrap: "nowrap",
+              flexWrap: 'nowrap',
             }}
-            xs={12}
+            spacing={2}
           >
-            <Typography variant="h5" sx={{ mb: 2 }}>
+            <Typography variant="h5" sx={{ mb: 2, ml: 2 }}>
               {name}
             </Typography>
-            <Grid
-              container
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                height: "100%",
-                flexWrap: "nowrap",
-                width: "100%",
-              }}
-              spacing={2}
-            >
-              <Grid xs={12} sx={{ position: "relative" }}>
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    zIndex: 999,
-                    bottom: 8,
-                    left: 15,
-                  }}
-                >
-                  Normal: {killCount(bosses, "normal")}/{bosses.length}
-                </Typography>
-                <LinearProgress
-                  variant="determinate"
-                  color="success"
-                  value={100}
-                  sx={{ height: "25px" }}
-                />
-              </Grid>
-              <Grid xs={12} sx={{ position: "relative" }}>
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    zIndex: 999,
-                    bottom: 8,
-                    left: 15,
-                  }}
-                >
-                  Heroic: {killCount(bosses, "heroic")}/{bosses.length}
-                </Typography>
-                <LinearProgress
-                  variant="determinate"
-                  color="success"
-                  value={100}
-                  sx={{ height: "25px" }}
-                />
-              </Grid>
-              <Grid xs={12} sx={{ position: "relative" }}>
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    zIndex: 999,
-                    bottom: 8,
-                    left: 15,
-                  }}
-                >
-                  Mythic: {killCount(bosses, "mythic")}/{bosses.length}
-                </Typography>
-                <LinearProgress
-                  variant="determinate"
-                  color="success"
-                  value={100}
-                  sx={{ height: "25px" }}
-                />
-              </Grid>
-            </Grid>
+            <RaidProgressionSummaryBar
+              killed={killCount(bosses, 'normal')}
+              difficulty="Normal"
+              total={bosses.length}
+            />
+            <RaidProgressionSummaryBar
+              killed={killCount(bosses, 'heroic')}
+              difficulty="Heroic"
+              total={bosses.length}
+            />
+            <RaidProgressionSummaryBar
+              killed={killCount(bosses, 'mythic')}
+              difficulty="Mythic"
+              total={bosses.length}
+            />
           </Grid>
         </Paper>
       </ThemeProvider>
