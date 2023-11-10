@@ -7,7 +7,7 @@ const NewsCards = ({ cards }) => {
     <Grid container xs={12} spacing={2}>
       {cards.map((card) => {
         return (
-          <Grid xs={12} sm={6} md={6} lg={3}>
+          <Grid key={card.id} xs={12} sm={6} md={6} lg={3}>
             <NewsCard card={card} />
           </Grid>
         );

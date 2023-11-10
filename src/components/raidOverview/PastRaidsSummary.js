@@ -13,7 +13,11 @@ const PastRaidSummary = ({ raids }) => {
       >
         {raids?.map((raid) => {
           return (
-            <RaidProgressionSummaryCard name={raid.name} bosses={raid.bosses} />
+            <RaidProgressionSummaryCard
+              key={raid.id}
+              name={raid.name}
+              bosses={raid.bosses}
+            />
           );
         })}
       </Grid>
