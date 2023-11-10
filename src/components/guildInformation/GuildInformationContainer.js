@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import GuildInformationLayout from "./GuildInformationLayout";
 
 const GuildInformationContainer = () => {
-  const [guildInfo, setGuildInfo] = useState(null);
+  const [guildData, setGuildData] = useState(null);
 
   useEffect(() => {
     // Fetch the data here and update the state
@@ -10,7 +10,7 @@ const GuildInformationContainer = () => {
       try {
         const { GuildInfo } = await import("../../data/guildInfo");
 
-        setGuildInfo({
+        setGuildData({
           ...GuildInfo,
         });
       } catch (error) {
@@ -22,11 +22,11 @@ const GuildInformationContainer = () => {
   }, []);
 
   // If guildInfo is not yet loaded, render a loading indicator
-  if (!guildInfo) {
+  if (!guildData) {
     return <div>Loading...</div>;
   }
 
-  return <GuildInformationLayout info={guildInfo} />;
+  return <GuildInformationLayout info={guildData} />;
 };
 
 export default GuildInformationContainer;
