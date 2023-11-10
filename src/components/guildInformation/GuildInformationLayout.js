@@ -4,10 +4,22 @@ import Grid from "@mui/material/Unstable_Grid2";
 import GuildLogo from "./GuildLogo";
 import GuildNameTitle from "./GuildNameTitle";
 import GuildSubTitle from "./GuildSubTitle";
-import GuildButtonGroup from "./GuildButtonGroup";
+import GuildButtonGroups from "./GuildButtonGroups";
 import GuildAbout from "./GuildAbout";
 
 const GuildInformationLayout = ({ info }) => {
+  const renderButtonGroups = (section) => {
+    return (
+      <Grid>
+        <GuildButtonGroups
+          buttons={info[section].buttons}
+          tooltip={info[section].tooltip}
+          color={info[section].color}
+        />
+      </Grid>
+    );
+  };
+
   return (
     <Container
       maxWidth="xl"
@@ -32,27 +44,11 @@ const GuildInformationLayout = ({ info }) => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid>
-          <GuildButtonGroup
-            buttons={info.mindset.buttons}
-            color={info.mindset.color}
-          />
-        </Grid>
-        <Grid>
-          <GuildButtonGroup
-            buttons={info.interests.buttons}
-            tooltip={info.interests.tooltip}
-            color={info.interests.color}
-          />
-        </Grid>
+        {renderButtonGroups("mindset")}
+        {renderButtonGroups("interests")}
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid>
-          <GuildButtonGroup
-            buttons={info.reportingSites.buttons}
-            color={info.reportingSites.color}
-          />
-        </Grid>
+        {renderButtonGroups("reportingSites")}
       </Grid>
       <Grid container sx={{ mt: 5 }}>
         <Grid>
@@ -60,12 +56,7 @@ const GuildInformationLayout = ({ info }) => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid>
-          <GuildButtonGroup
-            buttons={info.apply.buttons}
-            color={info.apply.color}
-          />
-        </Grid>
+        {renderButtonGroups("apply")}
       </Grid>
     </Container>
   );
