@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PastRaidSummary from "./PastRaidsSummary";
-import LatestRaidStatus from "./LatestRaidStatus";
+import PastRaidSummary from "./pastRaidSummary/PastRaidsSummary";
+import LatestRaidStatus from "./latestRaidStatus/LatestRaidStatus";
 
 const RaidProgressionContainer = () => {
   const [raidData, setRaidData] = useState(null);

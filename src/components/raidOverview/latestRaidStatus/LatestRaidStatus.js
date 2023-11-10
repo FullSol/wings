@@ -1,6 +1,6 @@
-import React from 'react';
-import Grid from '@mui/material/Unstable_Grid2';
-import RaidBossProgressionCard from './RaidBossProgressionCard';
+import React from "react";
+import Grid from "@mui/material/Unstable_Grid2";
+import RaidBossProgressionCard from "./RaidBossProgressionCard";
 
 const LatestRaidStatus = ({ latestRaid, difficulty }) => {
   return (
