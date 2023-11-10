@@ -14,13 +14,18 @@ const darkTheme = createTheme({
   },
 });
 
-const RaidBossProgressionCard = ({ name, title, imgLocation, progress }) => {
+const RaidBossProgressionCard = ({
+  name,
+  title,
+  imgLocation,
+  progress,
+  pulls,
+}) => {
   return (
     <Grid xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
         <Paper
           sx={{
-            // borderTopLeftRadius: 0,
             borderBottomLeftRadius: 0,
             borderLeft: "6px solid green",
           }}
@@ -33,6 +38,7 @@ const RaidBossProgressionCard = ({ name, title, imgLocation, progress }) => {
               p: 2,
               flexWrap: "nowrap",
             }}
+            xs={12}
           >
             <Grid sx={{ mr: 6 }}>
               <ZoomedCircleImage imgLocation={imgLocation} title={title} />
@@ -53,12 +59,13 @@ const RaidBossProgressionCard = ({ name, title, imgLocation, progress }) => {
                   flexWrap: "nowrap",
                 }}
                 spacing={2}
+                xs={12}
               >
                 <Grid xs={12}>
                   <Typography variant="h5">{name}</Typography>
                 </Grid>
                 <Grid xs={12}>
-                  <Typography>Status: Alive</Typography>
+                  <Typography>{`Status: Alive / Pulls: ${pulls}`}</Typography>
                 </Grid>
                 <Grid xs={12}>
                   <Typography>
