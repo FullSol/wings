@@ -4,6 +4,7 @@ import Amirdrassil from "../media/WoW_Dragonflight_10.2_Raid-Amirdrassil_Environ
 import LveelUp from "../media/Boost-Bundle-multi-purpose-1920x1080.jpeg";
 
 export const NewsInfo = {
+  sectionTitle: "What's New",
   items: [
     {
       id: 1,
