@@ -9,6 +9,7 @@ import "@fontsource/roboto/700.css";
 import "./index.css";
 import { Home, ErrorPage } from "./pages";
 import reportWebVitals from "./reportWebVitals";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home />, errorElement: <ErrorPage /> },
@@ -17,7 +18,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
 

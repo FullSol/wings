@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { ButtonGroup } from "@mui/material";
 import GuildButton from "./GuildButton";
 
-const GuildButtonGroup = ({ buttons, color }) => {
+const GuildButtonGroup = forwardRef(({ buttons, color }, ref) => {
   return (
-    <ButtonGroup color={color}>
+    <ButtonGroup ref={ref} color={color}>
       {/* TODO: theme.palette.alliance */}
       {buttons.map((button) => (
         <GuildButton
@@ -16,7 +16,7 @@ const GuildButtonGroup = ({ buttons, color }) => {
       ))}
     </ButtonGroup>
   );
-};
+});
 
 export default GuildButtonGroup;
 

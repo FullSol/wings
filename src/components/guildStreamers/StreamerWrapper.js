@@ -21,7 +21,7 @@ const StreamerWrapper = ({ streamers }) => {
       </Grid>
       {streamers.map((streamer) => {
         return (
-          <Grid xs={12} lg={6}>
+          <Grid key={streamer.id} xs={12} lg={6}>
             <Paper
               sx={{
                 overflow: "hidden",

@@ -14,6 +14,7 @@ const LatestRaidStatus = ({ latestRaid, difficulty }) => {
         {latestRaid.bosses?.map((boss) => {
           return (
             <RaidBossProgressionCard
+              key={boss.id}
               name={boss.name}
               imgLocation={boss.imgLocation}
               progress={boss.difficulties[difficulty].lowest}
