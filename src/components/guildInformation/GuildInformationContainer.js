@@ -9,8 +9,16 @@ const GuildInformationContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { GuildInfo } = await import("../../data/guildInfo");
-        dispatch({ type: "SET_GUILD_DATA", payload: GuildInfo });
+        const apiBaseUrl = process.env.REACT_APP_WINGS_API_URL;
+        const apiPort = process.env.REACT_APP_BE_PORT;
+        const uriEndPoint = "api/guild/info";
+        const requestUri = `${apiBaseUrl}:${apiPort}/${uriEndPoint}`;
+
+        // const { GuildInfo } = await import("../../data/guildInfo");
+        const response = await fetch(requestUri);
+        const data = await response.json();
+        console.log(data);
+        dispatch({ type: "SET_GUILD_DATA", payload: data });
       } catch (error) {
         console.error("Failed to fetch guild data:", error);
         dispatch({ type: "SET_ERROR", payload: error });

@@ -7,7 +7,6 @@ import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_
 import GuildInformation from "../components/guildInformation/GuildInformation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import News from "../components/news/News";
-import Roster from "../components/roster/Roster";
 
 const darkTheme = createTheme({
   palette: {
