@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Header } from "../components/header";
-// import { SubTitle } from "../components/headings";
-import New from "../components/new/new";
-import Streams from "../components/streams/streams";
-// import CharacterCard from "../components/roster/characterCard/characterCard";
-import Roster from "../components/roster/roster";
-import Progression from "../components/progression/progression";
+import GuildStreamers from "../components/guildStreamers/StreamersContainer";
+import RaidOverview from "../components/raidOverview/RaidOverview";
 import EmeraldDream from "../media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg";
-import About from "../components/about/about";
+import GuildInformation from "../components/guildInformation/GuildInformation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import News from "../components/news/News";
 
 const darkTheme = createTheme({
   palette: {
@@ -19,36 +15,16 @@ const darkTheme = createTheme({
 });
 
 const Home = () => {
-  const [state, setState] = useState({
-    siteTitle: "",
-    navLinks: [],
-    darkMode: "",
-  });
-
-  const { siteTitle, navLinks } = state;
-
-  useEffect(() => {
-    document.title = "Wings";
-    import("../data/headerInfo").then(({ HeaderInfo: data }) => {
-      setState((prevState) => ({
-        ...prevState,
-        siteTitle: data.siteTitle,
-        navLinks: data.navLinks,
-      }));
-    });
-  }, []);
-
   return (
     <>
-      {/* <Header title={siteTitle} links={navLinks} /> */}
       <Grid container component="main" direction="column">
         <Grid component="section" sx={{ bgcolor: "#1E1E1E" }}>
           <ThemeProvider theme={darkTheme}>
-            <About />
+            <GuildInformation />
           </ThemeProvider>
         </Grid>
         <Grid component="section">
-          <New />
+          <News />
         </Grid>
         <Grid
           component="section"
@@ -61,20 +37,12 @@ const Home = () => {
           }}
         >
           <Container maxWidth="xl">
-            <Progression />
+            <RaidOverview />
           </Container>
         </Grid>
-        {/* <Grid
-          component="section"
-          sx={{ pt: 10, pb: 10, backgroundColor: "#1E1E1E" }}
-        >
+        <Grid component="section">
           <Container maxWidth="xl">
-            <Roster />
-          </Container>
-        </Grid> */}
-        <Grid component="section" sx={{ height: "1000px" }}>
-          <Container maxWidth="xl" sx={{ mt: "300px" }}>
-            <Streams />
+            <GuildStreamers />
           </Container>
         </Grid>
       </Grid>
