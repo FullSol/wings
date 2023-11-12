@@ -1,20 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import GuildInformationLayout from "./GuildInformationLayout";
+import Loading from "../loading/Loading";
+
+const initialState = {
+  guildData: null,
+  isLoading: true,
+  error: null,
+};
+
+function guildReducer(state, action) {
+  switch (action.type) {
+    case "SET_GUILD_DATA":
+      return { ...state, guildData: action.payload, isLoading: false };
+    case "SET_ERROR":
+      return { ...state, error: action.payload, isLoading: false };
+    default:
+      throw new Error();
+  }
+}
 
 const GuildInformationContainer = () => {
-  const [guildData, setGuildData] = useState(null);
+  const [state, dispatch] = useReducer(guildReducer, initialState);
 
   useEffect(() => {
-    // Fetch the data here and update the state
     const fetchData = async () => {
       try {
         const { GuildInfo } = await import("../../data/guildInfo");
-
-        setGuildData({
-          ...GuildInfo,
-        });
+        dispatch({ type: "SET_GUILD_DATA", payload: GuildInfo });
       } catch (error) {
-        console.error("Failed to fetch raid data:", error);
+        console.error("Failed to fetch guild data:", error);
+        dispatch({ type: "SET_ERROR", payload: error });
       }
     };
 
@@ -22,11 +37,11 @@ const GuildInformationContainer = () => {
   }, []);
 
   // If guildInfo is not yet loaded, render a loading indicator
-  if (!guildData) {
-    return <div>Loading...</div>;
+  if (state.isLoading) {
+    return <Loading height="100vh" />;
   }
 
-  return <GuildInformationLayout info={guildData} />;
+  return <GuildInformationLayout info={state.guildData} />;
 };
 
 export default GuildInformationContainer;
