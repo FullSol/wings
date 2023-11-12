@@ -1,23 +1,7 @@
 import React, { useReducer, useEffect } from "react";
+import { guildReducer, initialState } from "../../reducers/guildReducer";
 import GuildInformationLayout from "./GuildInformationLayout";
 import Loading from "../loading/Loading";
-
-const initialState = {
-  guildData: null,
-  isLoading: true,
-  error: null,
-};
-
-function guildReducer(state, action) {
-  switch (action.type) {
-    case "SET_GUILD_DATA":
-      return { ...state, guildData: action.payload, isLoading: false };
-    case "SET_ERROR":
-      return { ...state, error: action.payload, isLoading: false };
-    default:
-      throw new Error();
-  }
-}
 
 const GuildInformationContainer = () => {
   const [state, dispatch] = useReducer(guildReducer, initialState);
