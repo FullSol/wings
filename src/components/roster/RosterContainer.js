@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from "react";
-import { rosterReducer } from "../../reducers/rosterReducer.js";
+import { rosterReducer, initialState } from "../../reducers/rosterReducer.js";
 import Loading from "../loading/Loading.js";
 import RosterLayout from "./RosterLayout.js";
 
