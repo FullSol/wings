@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from "react";
-import StreamerWrapper from "./StreamerWrapper";
+import React, { useReducer, useEffect } from "react";
+import { streamerReducer, initialState } from "../../reducers/streamerReducer";
+import { twitchEmbedUrl } from "../../utils/twitchUtils";
+import StreamerLayout from "./StreamerLayout";
+import Loading from "../loading/Loading";
 
 const StreamersContainer = () => {
-  const [streamerData, setStreamerData] = useState();
-
-  const twitchEmbedUrl = (channel) => {
-    const hostName = window.location.hostname;
-
-    const parent = hostName.includes("localhost")
-      ? "localhost"
-      : "www.wingsguild.com";
-
-    return `https://player.twitch.tv/?channel=${channel}&parent=${parent}`;
-  };
+  const [state, dispatch] = useReducer(streamerReducer, initialState);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,20 +19,21 @@ const StreamersContainer = () => {
           };
         });
 
-        setStreamerData(processedStreamInfo);
+        dispatch({ type: "SET_STREAMER_DATA", payload: processedStreamInfo });
       } catch (error) {
         console.error("Failed to fetch streamer data:", error);
+        dispatch({ type: "SET_ERROR", payload: error });
       }
     };
 
     fetchData();
   }, []);
 
-  if (!streamerData) {
-    return <div>Loading...</div>;
+  if (state.isLoading) {
+    return <Loading />;
   }
 
-  return <StreamerWrapper streamers={streamerData} />;
+  return <StreamerLayout streamers={state.streamerData} />;
 };
 
 export default StreamersContainer;
