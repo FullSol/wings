@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
+import { raidReducer, initialState } from "../../reducers/raidReducer";
 import PastRaidSummary from "./pastRaidSummary/PastRaidsSummary";
 import LatestRaidStatus from "./latestRaidStatus/LatestRaidStatus";
+import Loading from "../loading/Loading";
 
 const RaidProgressionContainer = () => {
-  const [raidData, setRaidData] = useState(null);
+  const [state, dispatch] = useReducer(raidReducer, initialState);
 
   useEffect(() => {
     // Fetch the data here and update the state
     const fetchData = async () => {
       try {
         const { ProgressionInfo } = await import("../../data/progressionInfo");
-        setRaidData(ProgressionInfo);
+        dispatch({ type: "SET_RAID_DATA", payload: ProgressionInfo });
       } catch (error) {
         console.error("Failed to fetch raid data:", error);
+        dispatch({ type: "SET_ERROR", payload: error });
       }
     };
 
@@ -39,18 +42,18 @@ const RaidProgressionContainer = () => {
   };
 
   // If raidData is not yet loaded, render a loading indicator
-  if (!raidData) {
-    return <div>Loading...</div>;
+  if (state.isLoading) {
+    return <Loading />;
   }
 
   // Latest raid would be the last item in the array of raid data
-  const latestRaid = raidData[raidData.length - 1];
+  const latestRaid = state.raidData[state.raidData.length - 1];
   const difficulty = getDifficulty(latestRaid);
 
   return (
     <>
       <LatestRaidStatus latestRaid={latestRaid} difficulty={difficulty} />
-      <PastRaidSummary raids={raidData} />
+      <PastRaidSummary raids={state.raidData} />
     </>
   );
 };
