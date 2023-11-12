@@ -3,7 +3,7 @@ import { Typography, Paper } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import StreamerPanel from "./StreamerPanel";
 
-const StreamerWrapper = ({ streamers }) => {
+const StreamerLayout = ({ streamers }) => {
   return (
     <Grid container xs={12} spacing={2} sx={{ pt: 8, pb: 8 }}>
       <Grid
@@ -49,4 +49,4 @@ const StreamerWrapper = ({ streamers }) => {
   );
 };
 
-export default StreamerWrapper;
+export default StreamerLayout;
