@@ -7,7 +7,7 @@ const Loading = ({ height }) => {
     <Container
       maxWidth="xl"
       sx={{
-        height: height,
+        height: height || "500px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
