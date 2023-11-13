@@ -1,9 +1,10 @@
 import TheWarWithin from "../media/World_of_Warcraft_The_War_Within_Logo.png";
 import GuardiansOfTheDream from "../media/World_of_Warcraft_Guardians_of_the_Dream_logo.png";
 import Amirdrassil from "../media/WoW_Dragonflight_10.2_Raid-Amirdrassil_Environments_004.png";
-import LveelUp from "../media/Boost-Bundle-multi-purpose-1920x1080.jpeg";
+import LevelUp from "../media/Boost-Bundle-multi-purpose-1920x1080.jpeg";
 
 export const NewsInfo = {
+  sectionTitle: "What's New",
   items: [
     {
       id: 1,
@@ -33,7 +34,7 @@ export const NewsInfo = {
     },
     {
       id: 4,
-      image: LveelUp,
+      image: LevelUp,
       title: "World Gear Upgradeable to 450 Item Level",
       description:
         "Gear obtained from open world activities after the launch of Dragonflight Patch 10.2 have been updated to be upgraded to 450 item level.",

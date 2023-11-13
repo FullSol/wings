@@ -13,4 +13,11 @@ export const StreamerInfo = [
     specialization: "Augment",
     class: "Evoker",
   },
+  {
+    id: 3,
+    name: "Vladijmir",
+    chanel: "1vladijmir",
+    specialization: "Protection",
+    class: "Paladin",
+  },
 ];
