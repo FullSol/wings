@@ -28,6 +28,7 @@ const Home = () => {
         <Grid
           component="section"
           sx={{
+            bgcolor: "#1E1E1E",
             width: "100%",
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:3001/media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg)`,
             backgroundRepeat: "no-repeat",

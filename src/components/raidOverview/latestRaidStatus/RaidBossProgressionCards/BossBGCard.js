@@ -39,6 +39,7 @@ const BossBGCard = ({
             borderBottomLeftRadius: 0,
             borderLeft: determineBorderStyle(),
           }}
+          elevation={5}
         >
           <Grid
             container
