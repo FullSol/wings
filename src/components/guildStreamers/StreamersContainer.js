@@ -3,6 +3,7 @@ import { streamerReducer, initialState } from "../../reducers/streamerReducer";
 import { twitchEmbedUrl } from "../../utils/twitchUtils";
 import StreamerLayout from "./StreamerLayout";
 import Loading from "../loading/Loading";
+import { fetchWingsData } from "../../utils/fetchUtils";
 
 const StreamersContainer = () => {
   const [state, dispatch] = useReducer(streamerReducer, initialState);
@@ -10,18 +11,23 @@ const StreamersContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { StreamerInfo } = await import("../../data/streamerInfo");
+        // Fetch data from wings api
+        const data = await fetchWingsData("api/streamers");
 
-        const processedStreamInfo = StreamerInfo.map((streamer) => {
+        // Create the player's url for each streamer
+        const processedStreamInfo = data.map((streamer) => {
           return {
             ...streamer,
             twitchEmbedUrl: twitchEmbedUrl(streamer.channel),
           };
         });
 
+        // Dispatch to streamer reducer
         dispatch({ type: "SET_STREAMER_DATA", payload: processedStreamInfo });
       } catch (error) {
         console.error("Failed to fetch streamer data:", error);
+
+        // Dispatch to streamer reducer
         dispatch({ type: "SET_ERROR", payload: error });
       }
     };

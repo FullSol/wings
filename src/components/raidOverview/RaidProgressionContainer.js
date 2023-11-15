@@ -3,23 +3,29 @@ import { raidReducer, initialState } from "../../reducers/raidReducer";
 import PastRaidSummary from "./pastRaidSummary/PastRaidsSummary";
 import LatestRaidStatus from "./latestRaidStatus/LatestRaidStatus";
 import Loading from "../loading/Loading";
+import { fetchWingsData } from "../../utils/fetchUtils";
 
 const RaidProgressionContainer = () => {
   const [state, dispatch] = useReducer(raidReducer, initialState);
 
   useEffect(() => {
     // Fetch the data here and update the state
-    const fetchData = async () => {
+    const loadData = async () => {
       try {
-        const { ProgressionInfo } = await import("../../data/progressionInfo");
-        dispatch({ type: "SET_RAID_DATA", payload: ProgressionInfo });
+        // Fetch data from wings api
+        const data = await fetchWingsData("api/raid");
+
+        // Dispatch to the raid reducer
+        dispatch({ type: "SET_RAID_DATA", payload: data });
       } catch (error) {
         console.error("Failed to fetch raid data:", error);
+
+        // Dispatch to the raid reducer
         dispatch({ type: "SET_ERROR", payload: error });
       }
     };
 
-    fetchData();
+    loadData();
   }, []);
 
   // Determine the highest difficulty progression has started on
