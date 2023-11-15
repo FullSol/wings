@@ -1,20 +1,19 @@
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
-import { Paper, Box, Typography, LinearProgress } from "@mui/material";
+import { Paper, Typography, LinearProgress } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import ZoomedCircleImage from "./zoomedCircleImage";
 
 const darkTheme = createTheme({
   palette: {
     mode: "dark", // Switching the theme mode to 'dark'
     success: {
-      main: "#008001", // This is an example color. Replace with the color you want.
+      main: "#008001",
     },
   },
 });
 
-const RaidBossProgressionCard = ({
+const BossBGCard = ({
   name,
   title,
   imgLocation,
@@ -23,13 +22,22 @@ const RaidBossProgressionCard = ({
   status,
   date,
 }) => {
+  const determineBorderStyle = () => {
+    if (status === "killed") {
+      return "6px solid red";
+    } else if (status === "progressing" && pulls > 0) {
+      return "6px solid yellow";
+    }
+    return "6px solid green";
+  };
+
   return (
     <Grid xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
         <Paper
           sx={{
             borderBottomLeftRadius: 0,
-            borderLeft: "6px solid green",
+            borderLeft: determineBorderStyle(),
           }}
         >
           <Grid
@@ -41,14 +49,14 @@ const RaidBossProgressionCard = ({
               flexWrap: "nowrap",
               backgroundImage: `url(${imgLocation})`,
               backgroundAttachment: "scroll",
-              backgroundPosition: "top right",
+              backgroundPosition: "95%",
               backgroundRepeat: "no-repeat",
+              backgroundSize: "auto 100%",
             }}
             xs={12}
           >
             <Grid
               sx={{
-                p: 2,
                 width: "100%",
               }}
             >
@@ -78,7 +86,7 @@ const RaidBossProgressionCard = ({
                       variant="determinate"
                       color="success"
                       value={100 - progress}
-                      sx={{ height: "15px" }}
+                      sx={{ height: "15px", width: "70%" }}
                     />
                   </Typography>
                 </Grid>
@@ -103,9 +111,9 @@ const RaidBossProgressionCard = ({
   );
 };
 
-export default RaidBossProgressionCard;
+export default BossBGCard;
 
-RaidBossProgressionCard.propTypes = {
+BossBGCard.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   imgLocation: PropTypes.string.isRequired,
