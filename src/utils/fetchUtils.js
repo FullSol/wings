@@ -3,6 +3,8 @@ export const fetchWingsData = async (uriEndPoint) => {
     const apiBaseUrl = process.env.REACT_APP_WINGS_API_URL;
     const requestUri = `${apiBaseUrl}/${uriEndPoint}`;
 
+    console.log(requestUri);
+
     const response = await fetch(requestUri);
     const data = await response.json();
     return data;
