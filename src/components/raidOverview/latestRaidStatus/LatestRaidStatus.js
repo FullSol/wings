@@ -20,6 +20,7 @@ const LatestRaidStatus = ({ latestRaid, difficulty }) => {
               progress={boss.difficulties[difficulty].lowest}
               pulls={boss.difficulties[difficulty].pulls}
               status={boss.difficulties[difficulty].status}
+              date={new Date(boss.difficulties[difficulty].date)}
             />
           );
         })}
