@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import RaidBossProgressionCardBossBG from "./RaidBossProgressionCardBossBG";
+import RaidBossProgressionCard from "./RaidBossProgressionCard";
 
 const LatestRaidStatus = ({ latestRaid, difficulty }) => {
   return (
@@ -13,14 +13,13 @@ const LatestRaidStatus = ({ latestRaid, difficulty }) => {
       >
         {latestRaid.bosses?.map((boss) => {
           return (
-            <RaidBossProgressionCardBossBG
+            <RaidBossProgressionCard
               key={boss.id}
               name={boss.name}
               imgLocation={boss.imgLocation}
               progress={boss.difficulties[difficulty].lowest}
               pulls={boss.difficulties[difficulty].pulls}
               status={boss.difficulties[difficulty].status}
-              date={new Date(boss.difficulties[difficulty].date)}
             />
           );
         })}

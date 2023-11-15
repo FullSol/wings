@@ -11,16 +11,15 @@ const PastRaidSummary = ({ raids }) => {
         spacing={{ xs: 2, lg: 2 }} // card spacing
         xs={12} // progression section width
       >
-        {raids &&
-          [...raids].reverse().map((raid) => {
-            return (
-              <RaidProgressionSummaryCard
-                key={raid.id}
-                name={raid.name}
-                bosses={raid.bosses}
-              />
-            );
-          })}
+        {raids?.map((raid) => {
+          return (
+            <RaidProgressionSummaryCard
+              key={raid.id}
+              name={raid.name}
+              bosses={raid.bosses}
+            />
+          );
+        })}
       </Grid>
     </Grid>
   );

@@ -11,6 +11,9 @@ const ZoomedCircleImage = ({ imgLocation, title }) => {
         borderRadius: "50%",
         border: "1px solid #FFF",
         overflow: "hidden",
+        "&:hover img": {
+          transform: "scale(1.1)",
+        },
       }}
     >
       <Box
