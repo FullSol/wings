@@ -31,15 +31,19 @@ const RaidProgressionContainer = () => {
   // Determine the highest difficulty progression has started on
   const getDifficulty = (raid) => {
     const difficultyOrder = ["mythic", "heroic", "normal"]; // Ordered highest to lowest
-    let highestDifficultyKilled = difficultyOrder[difficultyOrder.length - 1]; // Start with the lowest difficulty
+    let highestDifficultyKilled = "";
 
     // Iterate over each boss
     raid.bosses?.forEach((boss) => {
       // Check each difficulty for the current boss starting from the highest
       for (const difficulty of difficultyOrder) {
         if (boss.difficulties[difficulty].status === "killed") {
-          highestDifficultyKilled = difficulty;
-          break; // Stop checking lower difficulties if a higher one is killed
+          if (highestDifficultyKilled === "") {
+            highestDifficultyKilled = difficulty;
+            break;
+          } else {
+            break;
+          }
         }
       }
     });
