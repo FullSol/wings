@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { Paper, Typography, LinearProgress } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import ZoomedCircleImage from "./zoomedCircleImage";
+import ZoomedCircleImage from "../zoomedCircleImage";
 
 const darkTheme = createTheme({
   palette: {
