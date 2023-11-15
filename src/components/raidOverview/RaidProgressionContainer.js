@@ -15,8 +15,6 @@ const RaidProgressionContainer = () => {
         // Fetch data from wings api
         const data = await fetchWingsData("api/raid");
 
-        // const { ProgressionInfo } = await import("../../data/progressionInfo");
-
         // Dispatch to the raid reducer
         dispatch({ type: "SET_RAID_DATA", payload: data });
       } catch (error) {

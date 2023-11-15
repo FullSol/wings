@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import { guildReducer, initialState } from "../../reducers/guildReducer";
 import GuildInformationLayout from "./GuildInformationLayout";
 import Loading from "../loading/Loading";
+import { fetchWingsData } from "../../utils/fetchUtils";
 
 const GuildInformationContainer = () => {
   const [state, dispatch] = useReducer(guildReducer, initialState);
@@ -9,15 +10,10 @@ const GuildInformationContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiBaseUrl = process.env.REACT_APP_WINGS_API_URL;
-        const apiPort = process.env.REACT_APP_BE_PORT;
-        const uriEndPoint = "api/guild/info";
-        const requestUri = `${apiBaseUrl}:${apiPort}/${uriEndPoint}`;
+        // Fetch data from wings api
+        const data = await fetchWingsData("api/guild/info");
 
-        // const { GuildInfo } = await import("../../data/guildInfo");
-        const response = await fetch(requestUri);
-        const data = await response.json();
-        console.log(data);
+        // Dispatch to the guild reducer
         dispatch({ type: "SET_GUILD_DATA", payload: data });
       } catch (error) {
         console.error("Failed to fetch guild data:", error);
