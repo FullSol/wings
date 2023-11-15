@@ -21,6 +21,7 @@ const RaidBossProgressionCard = ({
   progress,
   pulls,
   status,
+  date,
 }) => {
   return (
     <Grid xs={12} md={6} lg={4}>
@@ -83,6 +84,18 @@ const RaidBossProgressionCard = ({
               </Grid>
             </Grid>
           </Grid>
+          {date && date.getTime() > 0 && (
+            <Grid>
+              <Typography>
+                First Killed:{" "}
+                {date.toLocaleString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </Typography>
+            </Grid>
+          )}
         </Paper>
       </ThemeProvider>
     </Grid>
