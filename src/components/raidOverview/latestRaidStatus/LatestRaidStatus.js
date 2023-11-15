@@ -19,6 +19,7 @@ const LatestRaidStatus = ({ latestRaid, difficulty }) => {
               imgLocation={boss.imgLocation}
               progress={boss.difficulties[difficulty].lowest}
               pulls={boss.difficulties[difficulty].pulls}
+              status={boss.difficulties[difficulty].status}
             />
           );
         })}

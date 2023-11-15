@@ -20,6 +20,7 @@ const RaidBossProgressionCard = ({
   imgLocation,
   progress,
   pulls,
+  status,
 }) => {
   return (
     <Grid xs={12} md={6} lg={4}>
@@ -65,7 +66,9 @@ const RaidBossProgressionCard = ({
                   <Typography variant="h5">{name}</Typography>
                 </Grid>
                 <Grid xs={12}>
-                  <Typography>{`Status: Alive / Pulls: ${pulls}`}</Typography>
+                  <Typography>{`Status: ${
+                    status === "killed" ? "Dead" : "Alive"
+                  } / Pulls: ${pulls}`}</Typography>
                 </Grid>
                 <Grid xs={12}>
                   <Typography>
