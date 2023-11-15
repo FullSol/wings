@@ -30,7 +30,7 @@ const Home = () => {
           sx={{
             bgcolor: "#1E1E1E",
             width: "100%",
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:3001/media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg)`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${process.env.REACT_APP_WINGS_API_URL}/media/patch_10.2_assets/environments/Emerald_Dream_Amirdrassil_Seed.jpg)`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
