@@ -117,5 +117,8 @@ BossBGCard.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   imgLocation: PropTypes.string.isRequired,
-  lowest: PropTypes.number.isRequired,
+  progress: PropTypes.number.isRequired,
+  pulls: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  date: PropTypes.object,
 };

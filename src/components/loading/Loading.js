@@ -21,4 +21,4 @@ const Loading = ({ height }) => {
 
 export default Loading;
 
-Loading.propTypes = { height: PropTypes.string.isRequired };
+Loading.propTypes = { height: PropTypes.string };

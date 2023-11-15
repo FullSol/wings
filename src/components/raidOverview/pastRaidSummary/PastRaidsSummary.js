@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Grid from "@mui/material/Unstable_Grid2";
 import RaidProgressionSummaryCard from "./RaidProgressionSummaryCard";
 import { Typography } from "@mui/material";
@@ -32,4 +33,10 @@ const PastRaidSummary = ({ raids }) => {
 
 export default PastRaidSummary;
 
-PastRaidSummary.propTypes = {};
+PastRaidSummary.propTypes = {
+  raids: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
