@@ -14,7 +14,7 @@ const NewsCard = ({ card }) => {
 
   return (
     <>
-      <Card sx={{ height: "100%" }}>
+      <Card sx={{ height: "100%" }} elevation={5}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
