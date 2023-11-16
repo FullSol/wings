@@ -31,6 +31,16 @@ const BossBGCard = ({
     return "6px solid green";
   };
 
+  const determineBarColor = () => {
+    if (progress > 66.6) {
+      return "success";
+    } else if (progress > 33.3) {
+      return "warning";
+    } else {
+      return "error";
+    }
+  };
+
   return (
     <Grid xs={12} md={6} lg={4}>
       <ThemeProvider theme={darkTheme}>
@@ -85,8 +95,8 @@ const BossBGCard = ({
                   <Typography>
                     <LinearProgress
                       variant="determinate"
-                      color="success"
-                      value={100 - progress}
+                      color={determineBarColor(progress)}
+                      value={progress}
                       sx={{ height: "15px", width: "70%" }}
                     />
                   </Typography>
